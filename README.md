@@ -10,6 +10,6 @@ In layman terms, you can use this to get mini links from long links.
 
 try it out: [https://smallurl-gg.vercel.app/](https://smallurl-gg.vercel.app/)
 
-for redirection _(example)_ add `/gh` to the end of the url.
+for redirection _(example)_ add `/gh` or `/lmao` to the end of the url.
 
 I followed this tutorial: [TheoBr - Link Shortener](https://www.youtube.com/watch?v=qcyEtvSiM9c)
