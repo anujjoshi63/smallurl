@@ -5,7 +5,7 @@ import { nanoid } from "nanoid";
 import debounce from "lodash/debounce"
 import { trpc } from "../../utils/trpc";
 import copy from "copy-to-clipboard"
-
+import Footer from "../components/Footer/Footer"
 type Form = {
   slug: string;
   url: string;
@@ -46,12 +46,12 @@ const Home: NextPage = () => {
             value="Copy Link"
             className="rounded bg-cyan-500 py-2 px-3  cursor-pointer m-5"
             onClick={() => {
-              copy(`${url}/link/${form.slug}`)
+              copy(`${url}/${form.slug}`)
             }}
           />
           <input
             type="button"
-            value="Reset"
+            value="Another one"
             className="rounded bg-cyan-500 py-2 px-3  cursor-pointer m-5"
             onClick={() => {
               createSlug.reset()
@@ -70,10 +70,10 @@ const Home: NextPage = () => {
           e.preventDefault();
           createSlug.mutate({ ...form })
         }}
-        className="flex flex-col justify-center h-screen sm:w-2/3 md:w-1/2 lg:w-1/3"
+        className="flex flex-col justify-center h-max sm:w-2/3 md:w-1/2 lg:w-1/3 p-6 gap-1 "
       >
         <h1 className="flex justify-center text-5xl mb-20 cursor-default">small url</h1>
-        <div className="flex items-center">
+        <div className="flex items-center gap-1">
           <span className="font-medium mr-2">{url}/</span>
           <input
             type="text"
@@ -92,21 +92,21 @@ const Home: NextPage = () => {
             title="Only alphanumeric characters and hypens are allowed. No spaces."
             required
           />
-          <input
-            type="button"
-            value="Random"
-            className="rounded bg-cyan-500 py-2 px-3 cursor-pointer ml-2"
-            onClick={() => {
-              const slug = nanoid()
-              setForm({
-                ...form,
-                slug
-              })
-              slugCheck.refetch()
-            }}
-          />
         </div>
-        <div className="flex items-center">
+        <input
+          type="button"
+          value="Random"
+          className="rounded border-cyan-600 border-2 py-2 px-3 cursor-pointer ml-2"
+          onClick={() => {
+            const slug = nanoid()
+            setForm({
+              ...form,
+              slug
+            })
+            slugCheck.refetch()
+          }}
+        />
+        <div className="flex items-center mt-5">
           <span className="font-medium mr-2">Link</span>
           <input
             type="url"
@@ -123,6 +123,7 @@ const Home: NextPage = () => {
           disabled={slugCheck.isFetched && slugCheck.data!.count > 0}
         />
       </form>
+      <Footer />
     </div>
   );
 };
