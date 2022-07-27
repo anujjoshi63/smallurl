@@ -7,6 +7,11 @@ export async function middleware(req: NextRequest, ev: NextFetchEvent) {
 	) {
 		return;
 	}
+	if (req.nextUrl.pathname.startsWith('/wa/')) {
+		const phoneNumber = req.nextUrl.pathname.split('/').pop();
+		const WHATSAPP_URL = `https://api.whatsapp.com/send?phone=${phoneNumber}`;
+		return NextResponse.redirect(WHATSAPP_URL);
+	}
 	const slug = req.nextUrl.pathname.split('/').pop();
 	const slugFetch = await fetch(`${req.nextUrl.origin}/api/url/${slug}`);
 	if (slugFetch.status === 404) {
