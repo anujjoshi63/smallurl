@@ -10,6 +10,16 @@ In layman terms, you can use this to get mini links from long links.
 
 try it out: [https://smallurl-gg.vercel.app/](https://smallurl-gg.vercel.app/)
 
-for redirection _(example)_ add `/gh` or `/lmao` to the end of the url.
+### for redirection _(example)_ add `/gh` or `/lmao` to the end of the url.
 
-I followed this tutorial: [TheoBr - Link Shortener](https://www.youtube.com/watch?v=qcyEtvSiM9c)
+---
+
+Want to text someone on WhatsApp without saving their number?
+
+### add `/wa/<number>` to the end of the url to text them.
+
+try it out: [https://smallurl-gg.vercel.app/wa/](https://smallurl-gg.vercel.app/)
+
+---
+
+Followed this: [TheoBr - Link Shortener](https://www.youtube.com/watch?v=qcyEtvSiM9c)
