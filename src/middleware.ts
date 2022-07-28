@@ -1,12 +1,6 @@
 import { NextFetchEvent, NextRequest, NextResponse } from 'next/server';
 
 export async function middleware(req: NextRequest, ev: NextFetchEvent) {
-	if (
-		req.nextUrl.pathname.startsWith('/api/') ||
-		req.nextUrl.pathname === '/'
-	) {
-		return;
-	}
 	if (req.nextUrl.pathname.startsWith('/wa/')) {
 		const phoneNumber = req.nextUrl.pathname.split('/').pop();
 		const WHATSAPP_URL = `https://api.whatsapp.com/send?phone=${phoneNumber}`;
@@ -23,3 +17,7 @@ export async function middleware(req: NextRequest, ev: NextFetchEvent) {
 		return NextResponse.redirect(data.url);
 	}
 }
+
+export const config = {
+	matcher: ['/:slug', '/wa/:number']
+};

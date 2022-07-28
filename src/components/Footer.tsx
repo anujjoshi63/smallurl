@@ -1,4 +1,4 @@
-export default function () {
+export default function Footer() {
     return (
         <div className=" p-6 m-6 flex gap-10 absolute bottom-2">
             <div className="cursor-pointer flex">
