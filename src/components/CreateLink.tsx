@@ -86,7 +86,7 @@ const CreateLink: NextPage = () => {
                     </span>
                 )}
                 <div className="flex items-center gap-1">
-                    <span className="font-medium mr-2">{url}/</span>
+                    <span className="font-medium mr-2 whitespace-nowrap">{url}/</span>
                     <input
                         type="text"
                         onChange={(e) => {
