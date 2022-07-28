@@ -16,7 +16,7 @@ export const appRouter = trpc
 				}
 			});
 
-			return { count };
+			return { used: count > 0 };
 		}
 	})
 	.mutation('createSlug', {
