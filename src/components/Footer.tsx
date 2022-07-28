@@ -1,7 +1,7 @@
 export default function Footer() {
     return (
         <div className=" p-6 m-6 flex gap-10 absolute bottom-2">
-            <a href="https://github.com/anujjoshi63/smallurl/" target="_blank">
+            <a href="https://github.com/anujjoshi63/smallurl/" target="_blank" rel="noreferrer">
                 <div className="cursor-pointer flex" >
                     <svg className="m-1 hover:animate-spin" width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <g>
@@ -11,7 +11,7 @@ export default function Footer() {
                     </svg>
                     Github</div>
             </a>
-            <a href="https://www.buymeacoffee.com/anujjoshi" target="_blank">
+            <a href="https://www.buymeacoffee.com/anujjoshi" target="_blank" rel="noreferrer">
                 <div className="cursor-pointer">☕ Buy me a coffee</div>
             </a>
         </div>
