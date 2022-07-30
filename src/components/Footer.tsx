@@ -1,6 +1,6 @@
 export default function Footer() {
     return (
-        <div className=" p-6 m-6 flex gap-10 absolute bottom-2">
+        <div className="basis-2/12 p-6 m-6 flex gap-10 bg-gray-800 text-gray-50 w-screen justify-center">
             <a href="https://github.com/anujjoshi63/smallurl/" target="_blank" rel="noreferrer">
                 <div className="cursor-pointer flex" >
                     <svg className="m-1 hover:animate-spin" width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
