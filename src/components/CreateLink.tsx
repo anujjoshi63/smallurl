@@ -93,7 +93,7 @@ const CreateLink: NextPage = () => {
                             ...form,
                             slug: e.target.value,
                         })
-                        debounce(slugCheck.refetch, 1000)
+                        debounce(slugCheck.refetch, 100)
                     }}
                     minLength={1}
                     placeholder="e.g. gh"
