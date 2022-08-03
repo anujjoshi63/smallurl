@@ -1,6 +1,8 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 export default function Footer() {
-    const at = window?.location.pathname;
+    const router = useRouter();
+    const at = router.asPath;
     return (
         <div className="basis-2/12 p-6 m-6 flex flex-col gap-5 bg-gray-800 text-gray-50 w-screen justify-center">
             <div className="justify-center">
