@@ -2,11 +2,9 @@ import Router from "next/router";
 import { useState } from "react";
 import Footer from "../components/Footer";
 export default function Anuj() {
-
     const [phoneNumber, setPhoneNumber] = useState("");
 
     return (
-
         <div className="flex flex-col justify-center items-center h-screen bg-gray-800 text-gray-50 gap-10 px-4">
             <h1 className="flex justify-center text-5xl mb-5 cursor-default">
                 small url
@@ -14,13 +12,19 @@ export default function Anuj() {
             <h1 className="text-2xl sm:text-xl">
                 Want to WhatsApp someone without saving their number?
             </h1>
-            <form onSubmit={(e) => {
-                e.preventDefault()
-                let sanitizedPhoneNumber = phoneNumber.replaceAll("-", "").replaceAll(" ", "").replaceAll("+", "").replace(/\D/g, '')
-                console.log(sanitizedPhoneNumber)
-                Router.push(`/wa/${sanitizedPhoneNumber}`);
-            }
-            } className="flex flex-col gap-3">
+            <form
+                onSubmit={(e) => {
+                    e.preventDefault();
+                    let sanitizedPhoneNumber = phoneNumber
+                        .replaceAll("-", "")
+                        .replaceAll(" ", "")
+                        .replaceAll("+", "")
+                        .replace(/\D/g, "");
+                    console.log(sanitizedPhoneNumber);
+                    Router.push(`/wa/${sanitizedPhoneNumber}`);
+                }}
+                className="flex flex-col gap-3"
+            >
                 <div className="flex items-center gap-1">
                     <span className="font-medium mr-2 whitespace-nowrap">
                         Enter their number here
@@ -32,10 +36,7 @@ export default function Anuj() {
                         className="text-black my-1 py-2 px-3 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-cyan-500 focus:ring-cyan-500 block w-full rounded-md sm:text-sm focus:ring-1"
                         minLength={7}
                         value={phoneNumber}
-                        onChange={
-                            (e) => setPhoneNumber(e.target.value)
-                        }
-
+                        onChange={(e) => setPhoneNumber(e.target.value)}
                     />
                 </div>
                 <input
@@ -50,7 +51,6 @@ export default function Anuj() {
                 <code style={{ color: "#128c7e" }}>Continue to chat</code>
             </p>
             <Footer />
-        </div >
-
+        </div>
     );
 }
