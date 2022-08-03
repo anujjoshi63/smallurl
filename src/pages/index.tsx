@@ -16,7 +16,7 @@ const Home: NextPage = () => {
         <Footer />
       </Suspense>
     </div>
-  )
+  );
 };
 
 export default Home;
