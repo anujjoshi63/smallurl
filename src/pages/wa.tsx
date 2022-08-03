@@ -1,13 +1,18 @@
 import Router from "next/router";
 import { useState } from "react";
+import Footer from "../components/Footer";
 export default function Anuj() {
 
     const [phoneNumber, setPhoneNumber] = useState("");
 
     return (
+
         <div className="flex flex-col justify-center items-center h-screen bg-gray-800 text-gray-50 gap-10 px-4">
+            <h1 className="flex justify-center text-5xl mb-5 cursor-default">
+                small url
+            </h1>
             <h1 className="text-2xl sm:text-xl">
-                Wanna WhatsApp someone without saving their number?
+                Want to WhatsApp someone without saving their number?
             </h1>
             <form onSubmit={(e) => {
                 e.preventDefault()
@@ -44,6 +49,8 @@ export default function Anuj() {
                 <span>you will be redirected to a page, click on</span>{" "}
                 <code style={{ color: "#128c7e" }}>Continue to chat</code>
             </p>
+            <Footer />
         </div >
+
     );
 }
