@@ -105,7 +105,7 @@ const CreateLink: NextPage = () => {
                     )}
                 </span>
                 <div className="flex items-center -mt-2">
-                    <span className="font-medium whitespace-nowrap mr-1">{url}/</span>
+                    <span className="font-medium whitespace-nowrap mr-1">{url.replaceAll(/https?:\/\//ig, "")}/</span>
                     <input
                         type="text"
                         onChange={(e) => {
