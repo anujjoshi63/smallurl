@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Router from "next/router";
 import { useState } from "react";
 import Footer from "../components/Footer";
@@ -6,6 +7,23 @@ export default function Anuj() {
 
     return (
         <div className="flex flex-col justify-center items-center h-screen bg-gray-800 text-gray-50 gap-10 px-4">
+            <Head>
+                <title>
+                    Smallify your URLs
+                </title>
+                <meta property="og:url" content={'https://smallify.vercel.app/wa'} />
+                <meta property="og:type" content="website" />
+                <meta
+                    property="og:title"
+                    content="WhatsApp without saving number!"
+                />
+                <meta name="twitter:card" content="summary" />
+                <meta
+                    property="og:description"
+                    content="No more saving unwanted contacts!"
+                />
+                <meta property="og:image" content={"https://via.placeholder.com/1600x900/1f2937/f9fafb?text=Contactless WhatsApp"} />
+            </Head>
             <h1 className="flex justify-center text-5xl mb-5 cursor-default">
                 small url
             </h1>
