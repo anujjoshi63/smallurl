@@ -13,7 +13,7 @@ type Form = {
 
 const CreateLink: NextPage = () => {
   const [form, setForm] = useState<Form>({ slug: "", url: "" });
-  const url = window.location.origin;
+  const url = "https://smallify.vercel.app";
 
   const slugCheck = trpc.useQuery(["slugCheck", { slug: form.slug }], {
     refetchOnReconnect: false,

@@ -3,10 +3,10 @@ import dynamic from "next/dynamic";
 import { Suspense } from "react";
 import Head from "next/head";
 const CreateLinkForm = dynamic(() => import("../components/CreateLink"), {
-  ssr: false,
+  ssr: true,
 });
 const Footer = dynamic(() => import("../components/Footer"), {
-  ssr: false,
+  ssr: true,
 });
 const Home: NextPage = () => {
   return (
@@ -30,8 +30,8 @@ const Home: NextPage = () => {
       </Head>
       <Suspense>
         <CreateLinkForm />
-        <Footer />
       </Suspense>
+        <Footer />
     </div>
   );
 };
