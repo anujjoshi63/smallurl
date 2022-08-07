@@ -69,6 +69,9 @@ const CreateLink: NextPage = () => {
       }}
       className="flex flex-col justify-center h-screen sm:w-1/2 md:w-1/2 lg:w-1/3 p-6 gap-1 basis-10/12"
     >
+      <h1 className="flex justify-center text-5xl mb-5 cursor-default">
+        small url
+      </h1>
       <div>
         <span className="font-medium mr-2 whitespace-nowrap text-sm">
           🤏 Link to smallify
