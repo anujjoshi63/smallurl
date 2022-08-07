@@ -5,9 +5,7 @@ import Head from "next/head";
 const CreateLinkForm = dynamic(() => import("../components/CreateLink"), {
   ssr: false,
 });
-const Footer = dynamic(() => import("../components/Footer"), {
-  ssr: false,
-});
+import Footer from "../components/Footer";
 const Home: NextPage = () => {
   return (
     <div className="flex flex-col justify-center items-center h-screen bg-gray-800 text-gray-50">
@@ -28,10 +26,13 @@ const Home: NextPage = () => {
           }
         />
       </Head>
-      <Suspense>
+      <Suspense fallback="Loading...">
+        <h1 className="flex justify-center text-5xl mb-5 cursor-default">
+          small url
+        </h1>
         <CreateLinkForm />
-        <Footer />
       </Suspense>
+      <Footer />
     </div>
   );
 };

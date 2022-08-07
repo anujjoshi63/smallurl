@@ -33,9 +33,6 @@ const CreateLink: NextPage = () => {
   if (createSlug.status === "success") {
     return (
       <>
-        <h1 className="flex justify-center text-5xl mb-5 cursor-default">
-          small url
-        </h1>
         <div className="flex justify-center items-center">
           <a href={`${url}/${form.slug}`}>
             <h1>{`${url}/${form.slug}`}</h1>
