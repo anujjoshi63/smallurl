@@ -3,7 +3,7 @@
 @tailwind utilities;
 @font-face {
   font-family: Rubik-Regular;
-  src: url("../public/Rubik-Regular.ttf");
+  src: url("/Rubik-Regular.ttf");
 }
 * {
   font-family: "Rubik-Regular";
