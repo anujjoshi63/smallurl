@@ -28,7 +28,10 @@ const Home: NextPage = () => {
 					property="og:description"
 					content="A Customizable URL shortener. Paste URL, give it a name, done!"
 				/>
-				<meta property="og:image" content={'/smallify.png'} />
+				<meta
+					property="og:image"
+					content={'https://smallify.tech/smallify.png'}
+				/>
 			</Head>
 			<Suspense>
 				<CreateLinkForm />
