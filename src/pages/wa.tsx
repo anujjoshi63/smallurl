@@ -23,7 +23,10 @@ export default function WhatsAppPage() {
 					property="og:description"
 					content="No more saving unwanted contacts!"
 				/>
-				<meta property="og:image" content={'/wa.png'} />
+				<meta
+					property="og:image"
+					content={'https://smallify.tech/wa.png'}
+				/>
 			</Head>
 			<h1 className="flex justify-center text-5xl mb-5 cursor-default">
 				smallify
