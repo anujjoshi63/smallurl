@@ -2,13 +2,13 @@ import Head from "next/head";
 import Router from "next/router";
 import { useState } from "react";
 import Footer from "../components/Footer";
-export default function Anuj() {
+export default function WhatsAppPage() {
   const [phoneNumber, setPhoneNumber] = useState("");
 
   return (
     <div className="flex flex-col justify-center items-center h-screen bg-gray-800 text-gray-50 gap-10 px-4">
       <Head>
-        <title>Smallify your URLs</title>
+        <title>Contactless Whatsapp</title>
         <meta property="og:url" content={"https://smallify.vercel.app/wa"} />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="WhatsApp without saving number!" />
@@ -25,7 +25,7 @@ export default function Anuj() {
         />
       </Head>
       <h1 className="flex justify-center text-5xl mb-5 cursor-default">
-        small url
+        smallify
       </h1>
       <h1 className="text-2xl sm:text-xl">
         Want to WhatsApp someone without saving their number?

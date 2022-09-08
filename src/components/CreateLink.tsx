@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import classNames from "classnames";
 import { nanoid } from "nanoid";
 import debounce from "lodash/debounce";
@@ -13,7 +13,14 @@ type Form = {
 
 const CreateLink: NextPage = () => {
   const [form, setForm] = useState<Form>({ slug: "", url: "" });
-  const url = "https://smallify.vercel.app";
+  // const url = "https://smallify.vercel.app";
+  const [url, setUrl] = useState("");
+  
+  useEffect(() => {
+    if (window && window?.location?.hostname) 
+      setUrl(window.location.hostname);
+  }, []);
+
 
   const slugCheck = trpc.useQuery(["slugCheck", { slug: form.slug }], {
     refetchOnReconnect: false,
@@ -34,7 +41,7 @@ const CreateLink: NextPage = () => {
     return (
       <>
         <h1 className="flex justify-center text-5xl mb-5 cursor-default">
-          small url
+          smallify
         </h1>
         <div className="flex justify-center items-center">
           <a href={`${url}/${form.slug}`}>
@@ -73,7 +80,7 @@ const CreateLink: NextPage = () => {
       className="flex flex-col justify-center h-screen sm:w-1/2 md:w-1/2 lg:w-1/3 p-6 gap-1 basis-10/12"
     >
       <h1 className="flex justify-center text-5xl mb-5 cursor-default">
-        small url
+        smallify
       </h1>
       <div>
         <span className="font-medium mr-2 whitespace-nowrap text-sm">
