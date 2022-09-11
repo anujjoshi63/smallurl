@@ -1,4 +1,4 @@
-# smallurl - smallify your URLs
+# smallify your URLs
 
 so basically you can use this to shorten your URLs.
 
@@ -9,7 +9,7 @@ In layman terms, you can use this to get mini links from long links.
 ---
 ## Features
 
-🚀try it out: [https://smallurl-gg.vercel.app/](https://smallurl-gg.vercel.app/)
+🚀try it out: [smallify.live](https://smallify.live)
 
 ### for redirection _(example)_ add `/gh` or `/lmao` to the end of the url.
 
@@ -19,7 +19,7 @@ In layman terms, you can use this to get mini links from long links.
 
 #### add `/wa/<number>` to the end of the url to text them.
 
-try it out: [https://smallurl-gg.vercel.app/wa/](https://smallurl-gg.vercel.app/)
+try it out: [smallify.live/wa/](https://smallify.live/wa)
 
 ---
 
