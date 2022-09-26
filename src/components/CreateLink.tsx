@@ -49,8 +49,8 @@ const CreateLink: NextPage = () => {
     "text-black my-1 py-2 px-3 sm:px-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-cyan-500 focus:ring-cyan-500 block w-full rounded-md sm:text-sm focus:ring-1";
 
   const slugInput = classNames(input, {
-    "border-red-500": slugCheck.isFetched ,
-    "text-red-500": slugCheck.isFetched ,
+    "border-red-500": slugCheck.isFetched && slugCheck.data!.used,
+    "text-red-500": slugCheck.isFetched && slugCheck.data!.used,
   });
 
   if (createSlug.status === "success") {
@@ -175,7 +175,7 @@ const CreateLink: NextPage = () => {
         type="submit"
         value="Smallify"
         className="rounded bg-cyan-500 py-2 px-3 cursor-pointer mt-4 text-lg"
-        disabled={slugCheck.isFetched }
+        disabled={slugCheck.isFetched && slugCheck.data!.used}
       />
     </form>
   );
