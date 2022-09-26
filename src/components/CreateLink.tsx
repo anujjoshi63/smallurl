@@ -5,6 +5,7 @@ import { nanoid } from "nanoid";
 import debounce from "lodash/debounce";
 import { trpc } from "../../utils/trpc";
 import copy from "copy-to-clipboard";
+import { Toaster, toast } from 'react-hot-toast';
 
 type Form = {
   slug: string;
@@ -15,7 +16,22 @@ const CreateLink: NextPage = () => {
   const [form, setForm] = useState<Form>({ slug: "", url: "" });
   // const url = "https://smallify.vercel.app";
   const [url, setUrl] = useState("");
-  
+  // 
+  const showToastMessage = () => {
+    toast('Link Copied!',
+      {
+        icon: '✅',
+        style: {
+          borderRadius: '10px',
+          background: '#333',
+          color: '#fff',
+        },
+      }
+    );
+  };
+  // 
+
+
   useEffect(() => {
     if (window && window?.location?.hostname) 
       setUrl(window.location.hostname);
@@ -33,8 +49,8 @@ const CreateLink: NextPage = () => {
     "text-black my-1 py-2 px-3 sm:px-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-cyan-500 focus:ring-cyan-500 block w-full rounded-md sm:text-sm focus:ring-1";
 
   const slugInput = classNames(input, {
-    "border-red-500": slugCheck.isFetched && slugCheck.data!.used,
-    "text-red-500": slugCheck.isFetched && slugCheck.data!.used,
+    "border-red-500": slugCheck.isFetched ,
+    "text-red-500": slugCheck.isFetched ,
   });
 
   if (createSlug.status === "success") {
@@ -55,6 +71,7 @@ const CreateLink: NextPage = () => {
             className="rounded bg-cyan-500 py-2 px-3  cursor-pointer m-5"
             onClick={() => {
               copy(`${url}/${form.slug}`);
+              showToastMessage();
             }}
           />
           <input
@@ -67,6 +84,10 @@ const CreateLink: NextPage = () => {
             }}
           />
         </div>
+        <Toaster
+          position="top-center"
+          reverseOrder={false}
+        />
       </>
     );
   }
@@ -154,7 +175,7 @@ const CreateLink: NextPage = () => {
         type="submit"
         value="Smallify"
         className="rounded bg-cyan-500 py-2 px-3 cursor-pointer mt-4 text-lg"
-        disabled={slugCheck.isFetched && slugCheck.data!.used}
+        disabled={slugCheck.isFetched }
       />
     </form>
   );
