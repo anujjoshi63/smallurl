@@ -107,7 +107,7 @@ const CreateLink: NextPage = () => {
           )}
           
         </span>
-        <div className="flex items-center mt-2">
+        <div className="flex items-center">
           <span className="font-medium whitespace-nowrap mr-1">
             {url.replaceAll(/https?:\/\//gi, "")}/
           </span>
