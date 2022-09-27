@@ -105,13 +105,9 @@ const CreateLink: NextPage = () => {
               Already in use.
             </span>
           )}
-          {!slugCheck.data?.used && (
-            <span className="font-medium text-center text-red-500 text-transparent select-none">
-              dummy
-            </span>
-          )}
+          
         </span>
-        <div className="flex items-center -mt-2">
+        <div className="flex items-center">
           <span className="font-medium whitespace-nowrap mr-1">
             {url.replaceAll(/https?:\/\//gi, "")}/
           </span>
