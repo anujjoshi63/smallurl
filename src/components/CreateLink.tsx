@@ -5,6 +5,7 @@ import { nanoid } from "nanoid";
 import debounce from "lodash/debounce";
 import { trpc } from "../../utils/trpc";
 import copy from "copy-to-clipboard";
+import { Toaster, toast } from 'react-hot-toast';
 
 type Form = {
   slug: string;
@@ -15,7 +16,22 @@ const CreateLink: NextPage = () => {
   const [form, setForm] = useState<Form>({ slug: "", url: "" });
   // const url = "https://smallify.vercel.app";
   const [url, setUrl] = useState("");
-  
+  // 
+  const showToastMessage = () => {
+    toast('Link Copied!',
+      {
+        icon: '✅',
+        style: {
+          borderRadius: '10px',
+          background: '#333',
+          color: '#fff',
+        },
+      }
+    );
+  };
+  // 
+
+
   useEffect(() => {
     if (window && window?.location?.hostname) 
       setUrl(window.location.hostname);
@@ -55,6 +71,7 @@ const CreateLink: NextPage = () => {
             className="rounded bg-cyan-500 py-2 px-3  cursor-pointer m-5"
             onClick={() => {
               copy(`${url}/${form.slug}`);
+              showToastMessage();
             }}
           />
           <input
@@ -67,6 +84,10 @@ const CreateLink: NextPage = () => {
             }}
           />
         </div>
+        <Toaster
+          position="top-center"
+          reverseOrder={false}
+        />
       </>
     );
   }
