@@ -44,7 +44,7 @@ const CreateLink: NextPage = () => {
           smallify
         </h1>
         <div className="flex justify-center items-center">
-          <a href={`${url}/${form.slug}`}>
+          <a href={`/${form.slug}`}>
             <h1>{`${url}/${form.slug}`}</h1>
           </a>
         </div>
