@@ -13,7 +13,7 @@ type Form = {
 
 const CreateLink: NextPage = () => {
   const [form, setForm] = useState<Form>({ slug: "", url: "" });
-  // const url = "https://smallify.vercel.app";
+  // const url = "https://smallify.live";
   const [url, setUrl] = useState("smallify.live");
   
   useEffect(() => {

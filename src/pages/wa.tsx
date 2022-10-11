@@ -11,7 +11,7 @@ export default function WhatsAppPage() {
 				<title>Contactless Whatsapp</title>
 				<meta
 					property="og:url"
-					content={'https://smallify.vercel.app/wa'}
+					content={'https://smallify.live/wa'}
 				/>
 				<meta property="og:type" content="website" />
 				<meta

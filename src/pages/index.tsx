@@ -16,7 +16,7 @@ const Home: NextPage = () => {
 				<link rel="shortcut icon" href="/favicon.ico" />
 				<meta
 					property="og:url"
-					content={'https://smallify.vercel.app'}
+					content={'https://smallify.live'}
 				/>
 				<meta property="og:type" content="website" />
 				<meta
