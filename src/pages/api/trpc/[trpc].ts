@@ -22,7 +22,7 @@ export const appRouter = trpc
   .mutation("createSlug", {
     input: z.object({
       slug: z.string(),
-      url: z.string().regex(/^(?!https:\/\/smallurl-gg\.vercel\.app).*/),
+      url: z.string().regex(/^(?!https:\/\/smallify).*/),
     }),
     async resolve({ input }) {
       try {
