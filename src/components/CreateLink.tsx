@@ -44,7 +44,7 @@ const CreateLink: NextPage = () => {
   const createSlug = trpc.useMutation(["createSlug"]);
 
   const input =
-    "text-black my-1 py-2 px-3 sm:px-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-cyan-500 focus:ring-cyan-500 block w-full rounded-md sm:text-sm focus:ring-1";
+    "text-black my-1 py-2 px-3 sm:px-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-[#07779C] focus:ring-[#07779C] block w-full rounded-md sm:text-sm focus:ring-1";
 
   const slugInput = classNames(input, {
     "border-red-500": slugCheck.isFetched && slugCheck.data!.used,
@@ -66,7 +66,7 @@ const CreateLink: NextPage = () => {
           <input
             type="button"
             value="Copy Link"
-            className="rounded bg-cyan-500 py-2 px-3  cursor-pointer m-5"
+            className="rounded-md bg-[#07779C] py-2 px-3  cursor-pointer m-5"
             onClick={() => {
               copy(`${url}/${form.slug}`);
               showToastMessage();
@@ -75,17 +75,14 @@ const CreateLink: NextPage = () => {
           <input
             type="button"
             value="Another one"
-            className="rounded bg-cyan-500 py-2 px-3  cursor-pointer m-5"
+            className="rounded-md bg-[#07779C] py-2 px-3  cursor-pointer m-5"
             onClick={() => {
               createSlug.reset();
               setForm({ slug: "", url: "" });
             }}
           />
         </div>
-        <Toaster
-          position="bottom-center"
-          reverseOrder={false}
-        />
+        <Toaster position="bottom-center" reverseOrder={false} />
       </>
     );
   }
@@ -96,7 +93,7 @@ const CreateLink: NextPage = () => {
         e.preventDefault();
         createSlug.mutate({ ...form });
       }}
-      className="flex flex-col justify-center h-screen sm:w-1/2 md:w-1/2 lg:w-1/3 p-6 gap-1 basis-10/12"
+      className="flex flex-col justify-center h-screen sm:w-2/3 w-full lg:w-1/3 md:w-1/2   p-6 gap-4"
     >
       <h1 className="flex justify-center text-5xl mb-5 cursor-default">
         smallify
@@ -116,8 +113,8 @@ const CreateLink: NextPage = () => {
         </div>
       </div>
 
-      <div className="flex flex-col ">
-        <span className="font-medium mr-2 whitespace-nowrap text-sm mt-4 flex gap-2 items-center">
+      <div className="flex flex-col bg-[#37415180] p-4 rounded-lg">
+        <span className="font-medium mr-2 whitespace-nowrap text-sm  flex gap-2 items-center ">
           ✍️ Customize
           {slugCheck.data?.used && (
             <span className="font-medium text-center text-red-500">
@@ -148,11 +145,12 @@ const CreateLink: NextPage = () => {
             required
           />
         </div>
-        <div>
+        <div className="flex justify-center items-center gap-5">
+          <div className="flex justify-center items-center flex-1 ml-2">or</div>
           <input
             type="button"
-            value="Generate Random"
-            className="rounded border-cyan-600 border-2 py-2 px-3 cursor-pointer w-50 mt-1 w-full"
+            value="Generate an alias"
+            className="rounded-md border-[#07779C] border-2 py-2 px-3 cursor-pointer w-50 mt-1 w-full"
             onClick={() => {
               const slug = nanoid();
               setForm({
@@ -168,7 +166,7 @@ const CreateLink: NextPage = () => {
       <input
         type="submit"
         value="Smallify"
-        className="rounded bg-cyan-500 py-2 px-3 cursor-pointer mt-4 text-lg"
+        className="rounded-md bg-[#07779C] py-2 px-3 cursor-pointer text-lg"
         disabled={slugCheck.isFetched && slugCheck.data!.used}
       />
     </form>
