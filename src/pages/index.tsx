@@ -14,6 +14,9 @@ const Home: NextPage = () => {
       <Head>
         <title>Smallify your URLs</title>
         <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="apple-touch-icon" href="/icon-192x192.png" />
+        <meta name="theme-color" content="#07779C" />
         <meta property="og:url" content={"https://smallify.live"} />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Smallify your long boring URLs" />
