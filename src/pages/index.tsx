@@ -14,6 +14,7 @@ const Home: NextPage = () => {
       <Head>
         <title>Smallify your URLs</title>
         <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="manifest" href="/manifest.json" />
         <meta property="og:url" content={"https://smallify.live"} />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Smallify your long boring URLs" />
