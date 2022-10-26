@@ -5,7 +5,7 @@ import { nanoid } from "nanoid";
 import debounce from "lodash/debounce";
 import { trpc } from "../../utils/trpc";
 import copy from "copy-to-clipboard";
-import { Toaster, toast } from 'react-hot-toast';
+import { Toaster, toast } from "react-hot-toast";
 
 type Form = {
   slug: string;
@@ -18,23 +18,19 @@ const CreateLink: NextPage = () => {
   const [url, setUrl] = useState("smallify.live");
 
   const showToastMessage = () => {
-    toast('Link Copied!',
-      {
-        icon: '✅',
-        style: {
-          borderRadius: '10px',
-          background: '#333',
-          color: '#fff',
-        },
-      }
-    );
+    toast("Link Copied!", {
+      icon: "✅",
+      style: {
+        borderRadius: "10px",
+        background: "#333",
+        color: "#fff",
+      },
+    });
   };
-  
-  useEffect(() => {
-    if (window && window?.location?.hostname) 
-      setUrl(window.location.hostname);
-  }, []);
 
+  useEffect(() => {
+    if (window && window?.location?.hostname) setUrl(window.location.hostname);
+  }, []);
 
   const slugCheck = trpc.useQuery(["slugCheck", { slug: form.slug }], {
     refetchOnReconnect: false,
@@ -54,10 +50,10 @@ const CreateLink: NextPage = () => {
   if (createSlug.status === "success") {
     return (
       <>
-        <h1 className="flex justify-center text-5xl mb-5 cursor-default">
+        <h1 className="mb-5 flex cursor-default justify-center text-5xl">
           smallify
         </h1>
-        <div className="flex justify-center items-center">
+        <div className="flex items-center justify-center">
           <a href={`/${form.slug}`}>
             <h1>{`${url}/${form.slug}`}</h1>
           </a>
@@ -66,7 +62,7 @@ const CreateLink: NextPage = () => {
           <input
             type="button"
             value="Copy Link"
-            className="rounded-md bg-[#07779C] py-2 px-3  cursor-pointer m-5"
+            className="m-5 cursor-pointer rounded-md bg-[#07779C]  py-2 px-3"
             onClick={() => {
               copy(`${url}/${form.slug}`);
               showToastMessage();
@@ -75,7 +71,7 @@ const CreateLink: NextPage = () => {
           <input
             type="button"
             value="Another one"
-            className="rounded-md bg-[#07779C] py-2 px-3  cursor-pointer m-5"
+            className="m-5 cursor-pointer rounded-md bg-[#07779C]  py-2 px-3"
             onClick={() => {
               createSlug.reset();
               setForm({ slug: "", url: "" });
@@ -93,13 +89,13 @@ const CreateLink: NextPage = () => {
         e.preventDefault();
         createSlug.mutate({ ...form });
       }}
-      className="flex flex-col justify-center h-screen sm:w-2/3 w-full lg:w-1/3 md:w-1/2   p-6 gap-4"
+      className="flex h-screen w-full flex-col justify-center gap-4 p-6 sm:w-2/3   md:w-1/2 lg:w-1/3"
     >
-      <h1 className="flex justify-center text-5xl mb-5 cursor-default">
+      <h1 className="mb-5 flex cursor-default justify-center text-5xl">
         smallify
       </h1>
       <div>
-        <span className="font-medium mr-2 whitespace-nowrap text-sm">
+        <span className="mr-2 whitespace-nowrap text-sm font-medium">
           🤏 Link to smallify
         </span>
         <div className="flex items-center">
@@ -113,18 +109,17 @@ const CreateLink: NextPage = () => {
         </div>
       </div>
 
-      <div className="flex flex-col bg-[#37415180] p-4 rounded-lg">
-        <span className="font-medium mr-2 whitespace-nowrap text-sm  flex gap-2 items-center ">
+      <div className="flex flex-col rounded-lg bg-[#37415180] p-4">
+        <span className="mr-2 flex items-center gap-2  whitespace-nowrap text-sm font-medium ">
           ✍️ Customize
           {slugCheck.data?.used && (
-            <span className="font-medium text-center text-red-500">
+            <span className="text-center font-medium text-red-500">
               Already in use.
             </span>
           )}
-          
         </span>
         <div className="flex items-center">
-          <span className="font-medium whitespace-nowrap mr-1">
+          <span className="mr-1 whitespace-nowrap font-medium">
             {url.replaceAll(/https?:\/\//gi, "")}/
           </span>
           <input
@@ -145,12 +140,12 @@ const CreateLink: NextPage = () => {
             required
           />
         </div>
-        <div className="flex justify-center items-center gap-5">
-          <div className="flex justify-center items-center flex-1 ml-2">or</div>
+        <div className="flex items-center justify-center gap-5">
+          <div className="ml-2 flex flex-1 items-center justify-center">or</div>
           <input
             type="button"
             value="Generate an alias"
-            className="rounded-md border-[#07779C] border-2 py-2 px-3 cursor-pointer w-50 mt-1 w-full"
+            className="w-50 mt-1 w-full cursor-pointer rounded-md border-2 border-[#07779C] py-2 px-3"
             onClick={() => {
               const slug = nanoid();
               setForm({
@@ -166,7 +161,7 @@ const CreateLink: NextPage = () => {
       <input
         type="submit"
         value="Smallify"
-        className="rounded-md bg-[#07779C] py-2 px-3 cursor-pointer text-lg"
+        className="cursor-pointer rounded-md bg-[#07779C] py-2 px-3 text-lg"
         disabled={slugCheck.isFetched && slugCheck.data!.used}
       />
     </form>

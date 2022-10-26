@@ -4,7 +4,7 @@ export default function Footer() {
   const router = useRouter();
   const at = router.asPath;
   return (
-    <div className="basis-2/12 p-6 m-6 flex flex-col gap-5 bg-gray-800 text-gray-50 w-screen justify-center">
+    <div className="m-6 flex w-screen basis-2/12 flex-col justify-center gap-5 bg-gray-800 p-6 text-gray-50">
       <div className="justify-center">
         {at === "/" ? (
           <Link href={"/wa"}>
@@ -18,13 +18,13 @@ export default function Footer() {
           </Link>
         )}
       </div>
-      <div className="flex gap-10 justify-center">
+      <div className="flex justify-center gap-10">
         <a
           href="https://github.com/anujjoshi63/smallurl/"
           target="_blank"
           rel="noreferrer"
         >
-          <div className="cursor-pointer flex">
+          <div className="flex cursor-pointer">
             <svg
               className="m-1 hover:animate-spin"
               width="16"

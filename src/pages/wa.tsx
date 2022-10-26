@@ -6,7 +6,7 @@ export default function WhatsAppPage() {
   const [phoneNumber, setPhoneNumber] = useState("");
 
   return (
-    <div className="flex flex-col justify-center items-center h-screen bg-gray-800 text-gray-50 gap-10 px-4">
+    <div className="flex h-screen flex-col items-center justify-center gap-10 bg-gray-800 px-4 text-gray-50">
       <Head>
         <title>Contactless Whatsapp</title>
         <meta property="og:url" content={"https://smallify.live/wa"} />
@@ -23,7 +23,7 @@ export default function WhatsAppPage() {
           content="WhatsApp without saving their number!"
         />
       </Head>
-      <h1 className="flex justify-center text-5xl mb-5 cursor-default">
+      <h1 className="mb-5 flex cursor-default justify-center text-5xl">
         smallify
       </h1>
       <h1 className="text-2xl sm:text-xl">
@@ -43,14 +43,14 @@ export default function WhatsAppPage() {
         className="flex flex-col gap-3"
       >
         <div className="flex items-center gap-1">
-          <span className="font-medium mr-2 whitespace-nowrap">
+          <span className="mr-2 whitespace-nowrap font-medium">
             Enter their number here
           </span>
           <input
             required
             type="text"
             placeholder="e.g. +1 999 999 9999"
-            className="text-black my-1 py-2 px-3 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-cyan-500 focus:ring-cyan-500 block w-full rounded-md sm:text-sm focus:ring-1"
+            className="my-1 block w-full rounded-md border border-slate-300 bg-white py-2 px-3 text-black placeholder-slate-400 shadow-sm focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 sm:text-sm"
             minLength={7}
             value={phoneNumber}
             onChange={(e) => setPhoneNumber(e.target.value)}
@@ -59,7 +59,7 @@ export default function WhatsAppPage() {
         <input
           type="submit"
           value="Go ahead"
-          className="rounded bg-cyan-500 py-2 px-3 cursor-pointer mt-1"
+          className="mt-1 cursor-pointer rounded bg-cyan-500 py-2 px-3"
           disabled={phoneNumber.length < 8}
         />
       </form>

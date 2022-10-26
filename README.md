@@ -7,13 +7,14 @@ In other words, you can use this to make your URLs shorter.
 In layman terms, you can use this to get mini links from long links.
 
 ---
+
 ## Features
 
 🚀try it out: [smallify.live](https://smallify.live)
 
 ### for redirection _(example)_ add `/gh` or `/lmao` to the end of the url.
 
-## 
+##
 
 🚀Want to text someone on WhatsApp without saving their number?
 
