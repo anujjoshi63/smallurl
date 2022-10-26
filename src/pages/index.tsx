@@ -10,7 +10,7 @@ const Footer = dynamic(() => import("../components/Footer"), {
 });
 const Home: NextPage = () => {
   return (
-    <div className="flex flex-col justify-center items-center h-screen bg-gray-800 text-gray-50">
+    <div className="flex h-screen flex-col items-center justify-center bg-gray-800 text-gray-50">
       <Head>
         <title>Smallify your URLs</title>
         <link rel="shortcut icon" href="/favicon.ico" />
