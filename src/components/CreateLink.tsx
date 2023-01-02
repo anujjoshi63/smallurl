@@ -29,7 +29,14 @@ const CreateLink: NextPage = () => {
   };
 
   useEffect(() => {
-    if (window && window?.location?.hostname) setUrl(window.location.hostname);
+    if (window && window?.location?.hostname) {
+      const host = window.location.hostname;
+      if (host === "localhost") {
+        setUrl(`localhost:${window.location.port}`);
+      } else {
+        setUrl(host);
+      }
+    }
   }, []);
 
   const slugCheck = trpc.useQuery(["slugCheck", { slug: form.slug }], {
